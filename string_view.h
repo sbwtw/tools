@@ -35,6 +35,9 @@ namespace nm
       : data_{ nullptr }, len_{ 0 }
     {}
 
+    basic_string_view(const std::string& s) : data_{s.data()}, len_{s.size()}
+    {}
+
     basic_string_view(const value_type* data)
       : data_{ data }, len_{ data ? StringType::traits_type::length(data) : 0 }
     {}
@@ -427,7 +430,7 @@ namespace nm
 
   using string_view = basic_string_view<std::string>;
 
-  bool operator== (const string_view& x, const string_view& y)
+  inline bool operator== (const string_view& x, const string_view& y)
   {
     auto r = string_view::cmp(x.data(), y.data(), std::min(x.size(), y.size()));
     return r == 0 && x.size() == y.size();
