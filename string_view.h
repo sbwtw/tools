@@ -423,7 +423,7 @@ namespace nm
 <<<<<<< HEAD
   inline bool operator==(const string_view& x, const string_view& y)
 =======
-  inline bool operator== (const string_view& x, const string_view& y)
+  inline bool operator==(const string_view& x, const string_view& y)
 >>>>>>> ddd3e07cac7046fe4bfe02f0c581c499f94f9c30
   {
     auto r = string_view::cmp(x.data(), y.data(), std::min(x.size(), y.size()));

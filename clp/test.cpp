@@ -51,7 +51,7 @@ int main(int argc, char* argv[])
   if(!none.empty())
   {
     cout << "none:\n";
-    for(auto&x: clp.none())
+    for(auto& x: clp.none())
       cout << x << endl;
   }
 }
